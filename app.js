@@ -1,8 +1,7 @@
 function goToPage(location) {
     const map = document.querySelector(".map");
     const locations = document.querySelectorAll(".location");
-    const clickedLocation = document.querySelector(`.location[onclick="goToPage('${location}')"]`); // Fixed querySelector
-
+    const clickedLocation = document.querySelector(`.location[onclick="goToPage('${location}')"]`); 
     const backgrounds = {
         bali: "images/bali4.png",
         sk: "images/.png",
@@ -41,9 +40,12 @@ function goToPage(location) {
 
         setTimeout(() => {
             if (pageLinks[location]) {
-                window.location.href = pageLinks[location]; // Redirect to the page
+                window.location.href = pageLinks[location]; 
                 return;
             }
+
+            map.style.backgroundImage = `url('${backgrounds[location]}')`;
+            
             setTimeout(() => {
                 map.style.opacity = "1";
                 map.style.transform = "scale(1)";
