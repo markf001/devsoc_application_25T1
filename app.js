@@ -56,7 +56,13 @@ function goToPage(location) {
 }
 
 function goBack() {
-history.back()
+    history.back(); 
+    setTimeout(() => {
+        document.querySelector(".map").style.backgroundImage = "url('images/earthmap1.png')";
+        document.querySelector(".map").style.opacity = "1";
+        document.querySelector(".map").style.transform = "scale(1)";
+    }, 500); 
 }
+
 
 
